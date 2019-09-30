@@ -6,4 +6,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-slides
+  [options]="slideOpts"
+  >
+    <ion-slide style=" background-color: purple">
+      <div style="height: 500px; background-color: red;">RED one </div>
+    </ion-slide>
+    <ion-slide style=" background-color: palegreen;">
+      <div style="height: 500px;  background-color: green;">GREEN two</div>
+    </ion-slide>
+      
+    <ion-slide style=" background-color: powderblue;">
+      <div style="height: 500px; background-color: blue;">BLOE three</div>
+    </ion-slide>
+      
+    <ion-slide style=" background-color: palegoldenrod;">
+      <div style="height: 500px; background-color: pink;">PINK Four</div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
