@@ -3,8 +3,12 @@
     <ion-title>
       Tab Two
     </ion-title>
-    <ion-label>{{number | number:'1.2-2'}}</ion-label>
+   
   </ion-toolbar>
+  <app-toolbar></app-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <!-- <ion-button [click]="goToolbar()">Go Toolbar</ion-button> -->
+  Date: <small>{{'7/10/2019' | date:medium}}</small>
+</ion-content>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigateService } from '../navigation.service';
 
 @Component({
   selector: 'app-tab2',
@@ -30,11 +31,16 @@ readonly  wealth = [
             checked: false,
         },
     ];
-  constructor() {
+  constructor(
+    // private navService : NavigateService,
+    ) {
 
     for (let x in this.wealth){
       console.log(this.wealth[x]);
     }
   }
 
+  goToolbar(){
+    //this.navService.navigateWithParams('tabs/dashboard/wealthmf', [] );
+  }
 }

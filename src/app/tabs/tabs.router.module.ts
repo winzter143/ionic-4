@@ -41,7 +41,14 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
-      }
+      },
+      // {
+      //   path: 'tbpage',
+      //   loadChildren: () => 
+      //     import('../toolbar-page/toolbar-page.module').then(m => m.ToolbarPagePageModule)
+            
+      //       //'./toolbar-page/toolbar-page.module#ToolbarPageModule'
+      // }
     ]
   },
   {
