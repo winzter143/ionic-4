@@ -9,10 +9,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//import { TooltipsModule } from 'ionic-tooltips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+  BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  //TooltipsModule.forRoot(),
+  BrowserAnimationsModule
+
+  ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -24,6 +24,9 @@ const routes: Routes = [
     
   ],
    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [ToolbarPagePage, ToolbarComponent]
+  declarations: [
+    ToolbarPagePage,
+    //ToolbarComponent
+    ]
 })
 export class ToolbarPagePageModule {}

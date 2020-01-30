@@ -1,5 +1,12 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons
+        [hidden]="!chevron"
+        (click)="goBack()"
+        slot="start"
+        class="back-button">
+        &lt;
+      </ion-buttons>
     <ion-title>tab2-page1 page2</ion-title>
   </ion-toolbar>
 </ion-header>
