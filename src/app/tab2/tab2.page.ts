@@ -18,10 +18,11 @@ readonly countries = COUNTRIES;
 // @ViewChild('cardPlans') sliderCard: IonSlides;
 // @ViewChild(IonContent) content: IonContent;
 // @ViewChild('myInput') myInput: ElementRef;
-@ViewChild('myInput', {static: false}) myInput: ElementRef;
-@ViewChild('myInput1', {static: true}) myInput1: IonInput;
+// @ViewChild('myInput', {static: false}) myInput: ElementRef;
+@ViewChild('myInput', {static: true}) myInput: IonInput;
 
 countries_data = [];
+searchValue = "";
 
 number = 3.14167;
 readonly  wealth = [
@@ -76,7 +77,6 @@ readonly  wealth = [
     console.log("dd2.valueOf() +30: ",dd2.valueOf());
 
      
-    console.log("Constrator; screen Size: H: ",this.platform.height, " ->W: ", this.platform.width);
 
 
 // let found = array1.filter(element => {
@@ -88,9 +88,12 @@ readonly  wealth = [
   }
 
   ngOnInit() {
-    
-  console.log('configured routes: ', this.router.config);
-}
+      console.log("ngOnInit; screen Size: H: ", this.platform.height, " ->W: ", this.platform.width);
+
+    //  console.log('configured routes: ', this.router.config);
+  }
+
+
   goToolbar(){
     //this.navService.navigateWithParams('tabs/dashboard/wealthmf', [] );
   }
@@ -98,6 +101,7 @@ readonly  wealth = [
 
   changeSearch($e){
     let v = $e.target.value;
+    this.searchValue = v;
     console.log("START changeSearch: ", JSON.stringify($e));
     console.log("START changeSearch: ", JSON.stringify($e.target.value));
     
@@ -108,19 +112,29 @@ readonly  wealth = [
       });
     }else{
       this.countries_data= [];
+      
     }
 
     console.log("END: ", JSON.stringify(this.countries_data));
-
+    console.log("END changeSearch:", this.myInput.value)
   }
 
   textFocus($e){
     // this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeigh
     // this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeight
-    console.log("START textFocus:", this.myInput);
+    console.log("START textFocus:", this.myInput.value)
   }
 
-getCoordinates(ev) { 
-  console.log('x: ' + ev.clientX + ' y: ' + ev.clientY);
-}
+  getCoordinates(ev) { 
+    console.log('x: ' + ev.clientX + ' y: ' + ev.clientY);
+  }
+
+  selectValue($event){
+    console.log("Tab2Page.selectValue: ", $event);
+    var input = <HTMLElement>document.querySelector("#input-select-temp");
+      input.setAttribute("value", $event.fname);
+      
+    this.countries_data = [];
+    // this.myInput.nativeElement
+  }
 }
